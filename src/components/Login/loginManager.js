@@ -89,10 +89,9 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
 export const signInWithEmailAndPassword = (email, password) => {
     return firebase.auth().signInWithEmailAndPassword(email, password)
       .then(res => {
-        const newUserInfo = {};
+        const newUserInfo = res.user;
         newUserInfo.error = '';
         newUserInfo.success = true;
-        //console.log(newUserInfo)
         return newUserInfo;
       })
       .catch(error => {
