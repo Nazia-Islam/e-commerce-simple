@@ -87,11 +87,7 @@ function Login() {
         handleResponse(res, true);
       })
     }
-
-   
   }
-
-
 
   return (
     <div style={{textAlign: 'center'}}>

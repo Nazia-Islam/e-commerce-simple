@@ -7,15 +7,18 @@ import { UserContext } from '../../App';
 
 const Header = () => {
     const [loggedInUser, setLoggedinUser] = useContext(UserContext);
-
+    
     return (
         <div className="header">
             <img src={logo} alt=""/>
             <nav>
-                <Link to="/shop">Shop</Link>
-                <Link to="/review">Order Review</Link>
-                <Link to="/manage">Manage Inventory</Link>
-                <button onClick={() => setLoggedinUser({})}>Sign Out</button>
+                <ul>
+                    <li><Link to="/shop">Shop</Link></li>
+                    <li><Link to="/review">Order Review</Link></li>
+                    <li><Link to="/manage">Manage Inventory</Link></li>
+                    <li style={{color:'gray'}}>{loggedInUser.email}</li>
+                    <li><button onClick={() => setLoggedinUser({})}>Sign Out</button></li>
+                </ul>
             </nav>
 
         </div>
